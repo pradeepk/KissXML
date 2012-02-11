@@ -1,5 +1,6 @@
 #import "DDXMLPrivate.h"
 #import "NSString+DDXML.h"
+#import "DDXMLElementAdditions.h"
 
 #import <libxml/xpath.h>
 #import <libxml/xpathInternals.h>
@@ -72,6 +73,10 @@ static void MarkDeath(void *xmlPtr, DDXMLNode *wrapper);
 		#endif
 		
 	});
+  
+    // Force linker to load this
+    [[[DDXML_NSString_FIX_CATEGORY_BUG alloc] init] autorelease];
+    [[[DDXML_NSXMLElement_FIX_CATEGORY_BUG alloc] init] autorelease];
 }
 
 + (id)elementWithName:(NSString *)name

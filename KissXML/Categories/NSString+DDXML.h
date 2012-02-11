@@ -12,3 +12,12 @@
 - (NSString *)stringByTrimming;
 
 @end
+
+
+/**
+ * Work around a linker bug. 
+ * https://developer.apple.com/library/mac/#qa/qa1490/_index.html
+ *
+ */
+@interface DDXML_NSString_FIX_CATEGORY_BUG : NSObject 
+@end

@@ -22,3 +22,11 @@
 - (NSDictionary *)attributesAsDictionary;
 
 @end
+
+/**
+ * Work around a linker bug. 
+ * https://developer.apple.com/library/mac/#qa/qa1490/_index.html
+ *
+ */
+@interface DDXML_NSXMLElement_FIX_CATEGORY_BUG : NSObject 
+@end

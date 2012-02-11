@@ -1,5 +1,7 @@
 #import "NSString+DDXML.h"
 
+@implementation DDXML_NSString_FIX_CATEGORY_BUG
+@end
 
 @implementation NSString (DDXML)
 

@@ -1,5 +1,8 @@
 #import "DDXMLElementAdditions.h"
 
+@implementation DDXML_NSXMLElement_FIX_CATEGORY_BUG : NSObject 
+@end
+
 @implementation DDXMLElement (DDAdditions)
 
 /**
