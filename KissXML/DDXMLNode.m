@@ -1565,10 +1565,12 @@ static void MarkDeath(void *xmlPtr, DDXMLNode *wrapper);
 			// Create a copy of the namespace, add to nsDef list, and then set as ns
 			xmlNsPtr nodeNsCopy = xmlNewNs(NULL, nodeNs->href, nodeNs->prefix);
 			
-			nodeNsCopy->next = node->nsDef;
-			node->nsDef = nodeNsCopy;
+			if (nodeNsCopy) { // will be null for "xml" namespace
+				nodeNsCopy->next = node->nsDef;
+				node->nsDef = nodeNsCopy;
 			
-			node->ns = nodeNsCopy;
+				node->ns = nodeNsCopy;
+			}
 		}
 	}
 	
@@ -1611,10 +1613,12 @@ static void MarkDeath(void *xmlPtr, DDXMLNode *wrapper);
 				// Create a copy of the namespace, add to node's nsDef list, and then set as attribute's ns
 				xmlNsPtr attrNsCopy = xmlNewNs(NULL, attrNs->href, attrNs->prefix);
 				
-				attrNsCopy->next = node->nsDef;
-				node->nsDef = attrNsCopy;
+				if (attrNsCopy) { // will be null for "xml" namespace
+					attrNsCopy->next = node->nsDef;
+					node->nsDef = attrNsCopy;
 				
-				attr->ns = attrNsCopy;
+					attr->ns = attrNsCopy;
+				}
 			}
 			
 			attrNs = attrNs->next;
